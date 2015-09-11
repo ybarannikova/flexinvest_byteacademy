@@ -1,0 +1,35 @@
+{% extends "flex/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<script type ="text/javascript" src="{% static 'flex/javascript/portfolio.js' %}"></script>
+<link href="{% static 'flex/css/portfolio.css' %}" rel="stylesheet">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+              <li class="active" ><a id="portfolio" href="/flex/portfolio/investments">My Portfolio</a></li>
+              <li><a id="trade_history" href="/flex/portfolio">Activity</a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <div id="portfolio_div" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <table id="information_table" class = "table">
+      </table>
+      <div class="table-responsive">
+        <table id="portfolio_table" class="table table-hover header-fixed" data-row-style="rowStyle">
+          <caption id="portfolio_caption"></caption>
+          <thead id="portfolio_head">
+          </thead>
+          <tbody id="portfolio_items" class="table rows-fixed">
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "main_controller/base.html" %}
+{% load staticfiles %}
+
+
+
+{% block content %}
+    <img class="img-responsive grid" src="{% static 'main_controller/investing.png' %}">
+  <div id="howitworks" class="col-12">
+    <h3>How it Works</h3> 
+    <h4>Our Vision</h4>
+    <p>We created an investment platform that allows large and small retail investors to pool their money together in order to buy advanced and custom structured products that are typically only available to wealthy institutional investors. Because of limited availability, investment banks are able to charge exhorbitant fees for bespoke products. The idea behind Flex Invest was based on streamlining and democratizing these services.  Our platform will open the market for institutional investing services to a wide range of small to large retail investors.</p>
+
+
+    <h4>The Tender Option Bond</h4>
+    <p>Creating a Tender Option Bond (TOB) is one of many strategies for restructuring Municipal Bonds.  The process starts with purchasing a long term, highly rated, tax exempt Municipal Bond. That purchase is funded by a combination of money market and residual investors, allocated at a 4 to 1 ratio, respectively.
+    <p>The bond's coupon payments are then divided among the two investors. Money Market investors are able to buy rotating short-term securities (in our scenario 1-month), that are priced at a rate equal to LIBOR plus spread. Because of the large difference in prevailing interest rates between the long-term Municipal Bond and the short-term Money Market Securities, there is a considerable portion of the bond's inflows remaining. Those leftover, or "residual" inflows, are paid out on a semi-annual basis.</p>
+
+    <h4>Sample Residual Cash Flows</h4>
+    <p><i>Scenario based on Municipal Bond CUSIP 650035VB1 issued Dec. 2010</i></p>
+    <img class="img-responsive grid" src="{% static "main_controller/cash_flows.png" %}" alt>
+
+    <h4>Crowdfunding</h4>
+    <p>Our current model assumes that banks have funded the Money Market portion, which is very liquid and provides a higher yield than the short-term yield currently available in the market, and that the residual part would be funded through the Flex Invest crowdfunding platform. The whole amount needed to fund the residual portion is sold as individual securities in denominations of $10,000. Like other crowdfunding platforms, so long as the full amount is raised by the required date, in our case the auction date of the Muncipal Bond, the deal proceeds.</p>
+
+    <h4>Flex</h4>
+    <p>While the Flex platform is a prototype based on the TOB model, our goal is to provide a diverse range of fixed-income structured products.</p>
+
+  </div>
+      
+        
+{% endblock %}

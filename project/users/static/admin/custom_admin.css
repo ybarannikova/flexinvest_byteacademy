@@ -1,0 +1,28 @@
+#header {
+  background-color: #003E76;
+}
+
+#branding {
+  min-width: 200px;
+}
+
+#branding img {
+  float: left;
+}
+
+#branding h1 {
+  float: right;
+}
+
+
+#branding h1, #branding h1 a:link, #branding h1 a:visited {
+    color: white;
+}
+
+#header a:link, #header a:visited {
+    color: white;
+}
+
+#header {
+    color: white;
+}

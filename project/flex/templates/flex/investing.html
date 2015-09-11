@@ -1,0 +1,95 @@
+{% extends "flex/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<link rel="stylesheet" href="http://css-spinners.com/css/spinner/spinner.css" type="text/css">
+<script type ="text/javascript" src="{% static 'flex/javascript/investing.js' %}"></script>
+<link href="{% static 'flex/css/investing.css' %}" rel="stylesheet">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="li_label"><strong>Est. Yield</strong></li>
+            <li class="filtering multi" id="est_yield_11_15"><a href="">11-15%</a></li>
+            <li class="filtering multi" id="est_yield_15_19"><a href="">15-19%</a></li>
+            <li class="filtering multi" id="est_yield_19_23"><a href="">19-23%</a></li>
+            <li class="filtering multi" id="est_yield_23_27"><a href="">23-27%</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li class="li_label"><strong>Funded</strong></li>
+            <li class="filtering multi" id="funded_0_25"><a href="">0-25%</a></li>
+            <li class="filtering multi" id="funded_25_50"><a href="">25-50%</a></li>
+            <li class="filtering multi" id="funded_50_75"><a href="">50-75%</a></li>
+            <li class="filtering multi" id="funded_75_100"><a href="">75-100%</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li class="li_label"><strong>Term (mo.)</strong></li>
+            <li class="filtering multi" id="term_200_250"><a href="">200-250</a></li>
+            <li class="filtering multi" id="term_250_300"><a href="">250-300</a></li>
+            <li class="filtering multi" id="term_300_350"><a href="">300-350</a></li>
+            <li class="filtering multi" id="term_350_400"><a href="">350-400</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li class="li_label"><strong>Time Left (days)</strong></li>
+            <li class="filtering multi" id="time_left_0_4"><a href="">0-4</a></li>
+            <li class="filtering multi" id="time_left_4_8"><a href="">4-8</a></li>
+            <li class="filtering multi" id="time_left_8_12"><a href="">8-12</a></li>
+            <li class="filtering multi" id="time_left_12_16"><a href="">12-16</a></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tranche_loading" class="spinner-loader"></div>
+    <div id="tranche_div" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <div class="table-responsive">
+        <table id="tranche_table" class="table table-hover header-fixed">
+          <thead id="tranche_head">
+            <tr>
+              <th><a class="sorting" id="funded" href="#">Funded <span class="glyphicon glyphicon-sort"></span></a></th>
+              <th><a class="sorting" id="est_yield" href="#">Est. Yield <span class="glyphicon glyphicon-sort"></span></a></th>
+              <th><a class="sorting" id="term" href="#">Term <span class="glyphicon glyphicon-sort"></span></a></th>
+              <th><a class="sorting" id="tranche" href="#">Tranche <span class="glyphicon glyphicon-sort"></span></a></th>
+              <th><a class="sorting" id="amount_left" href="#">Amount Left <span class="glyphicon glyphicon-sort"></span></a></th>
+              <th><a class="sorting" id="time_left" href="#">Time Left <span class="glyphicon glyphicon-sort"></span></a></th>
+            </tr>
+          </thead>
+          <tbody id="tranche_items">
+          </tbody>
+        </table>
+      </div>
+      <div id="footer">
+        <div id="footer_minimize"><span class='glyphicon glyphicon-menu-down'</span></div>
+        {% if perms.trancheur.can_own_contracts %}
+        <div id="footer_data">
+          <p> Face: $<span id='face'><span></p>
+          <p> Dated date: <span id='dated_date'><span></p>
+          <p> Maturity: <span id='maturity'></span></p>
+          <p> Interest payments: <span id='payments_per_year'></span>/year</p>
+          <p> Available:  $<span id='available'></span></p>
+          <p> Estimated Current Yield: <span id='est_yield'></span>%</p>
+          <br>
+          <p> Order amount: <b>$<span id='purchase_order_amount'>0.00</span></b></p>
+            <div class='input-group'>
+              <form id='purchase_order_form' action='/flex/purchase/' method='POST'>
+                {% csrf_token %}
+                <input name="num_contracts" id='num_contracts' class='form-control' type="number" value="0" min="0" max="0"></input>
+                <input type="hidden" name="tranche_id" id="tranche_id" value=""></input>
+                <input id="purchase_order_submit" class='btn btn-sm' type="submit" value='Submit Order'>
+              </form>
+            </div>
+          </p>
+        </div>
+        {% else %}
+        <div id="footer_data">
+            <a href="/register/">Register</a> or <a href="/login/">Login</a> to start investing.
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    </div>
+{% endblock %}

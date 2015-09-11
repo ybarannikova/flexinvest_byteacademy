@@ -1,0 +1,24 @@
+{% extends "flex/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<script src="{% static 'flex/javascript/trancheur.js' %}"></script>
+<link href="{% static 'flex/css/trancheur.css' %}" rel="stylesheet">
+
+  <div class="container">
+    <div class="row">
+        <div class="col-med-6">
+            <h3>Trancheur</h3>
+            <p>Shall we tranche?</p>
+            <form>
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-sm" value="Tranche">
+            </form>
+        </div>
+        <div class="col-med-6">
+        </div>
+    </div>
+  </div>
+{% endblock %}
+
+

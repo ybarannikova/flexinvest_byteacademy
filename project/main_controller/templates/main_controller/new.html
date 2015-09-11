@@ -1,0 +1,97 @@
+{% extends 'main_controller/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div id="carousel" class="carousel slide" data-pause="hover" data-ride="carousel" data-interval="5000">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+  </ol>
+
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="{% static "main_controller/carousel1.png" %}" alt="...">
+      <div class="carousel-caption">
+          <h3>FLEX, a new player in the Financial Services Industry.</h3>
+      </div>
+    </div>
+    <div class="item">
+      <img src="{% static "main_controller/carousel2.png" %}" alt="...">
+      <div class="carousel-caption">
+          <h3>Your personal, digital, investment banker.</h3>
+      </div>
+    </div>
+    <div class="item">
+      <img src="{% static "main_controller/carousel3.png" %}" alt="...">
+      <div class="carousel-caption">
+          <h3>Crowdsourcing for structured products.</h3>
+      </div>
+    </div>
+    <div class="item">
+      <img src="{% static "main_controller/carousel5.png" %}" alt="...">
+      <div class="carousel-caption">
+          <h3>Invest with Flex.</h3>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div> <!-- Carousel -->
+<div class="panel panel-default">
+  <div class="panel-body">
+  <p><a href="/register" id = "get_started_button" class="btn btn-primary btn-md" href="#" role="button">Get started today</a></p>
+  </div>
+</div>
+<div id="menu_grid" class="container-fluid">
+  <div class="row-fluid">
+    <a href="/flex">
+      <div class="col-md-3">
+        <!--Sidebar content-->
+            <img class="img-responsive grid" src="{% static "main_controller/financegrid2.png" %}" alt>
+          <h3>
+            Current Auctions
+          </h3> 
+        <p>Browse all current offerings.</p>
+      </div>
+    </a>
+        <a href="/howitworks/">
+      <div class="col-md-3">
+            <img class="img-responsive grid" src="{% static "main_controller/financegrid1.png" %}" alt>
+          <h3>
+            How it Works
+          </h3> 
+        <p>Learn about our vision and the inner workings of Flex Invest.</p>
+      </div>
+    </a>
+        <a>
+      <div class="col-md-3">
+        <!--Sidebar content-->
+            <img id="about_us" class="img-responsive grid" src="{% static "main_controller/about_us.png" %}" alt>
+          <h3>
+            About Us
+          </h3> 
+        <p>Meet the team: Yulia Barannikova, Demetris Vassiliou, & Matthew Rosenberg, the creators of Flex Invest.</p>
+      </div>
+    </a>
+        <a href="/register/">
+      <div class="col-md-3">
+        <!--Sidebar content-->
+            <img class="img-responsive grid" src="{% static "main_controller/financegrid3.png" %}" alt>
+          <h3>
+            Getting Started
+          </h3> 
+        <p>Sign up for your new account today.</p>
+      </div>
+    </a>
+  </div>
+</div>
+{% endblock %}

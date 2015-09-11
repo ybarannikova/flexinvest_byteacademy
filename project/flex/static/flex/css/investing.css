@@ -1,0 +1,180 @@
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+  padding: 3px;
+}
+
+.nav-sidebar > li {
+  width: 50%;
+  float: left;
+}
+
+.nav-sidebar > .li_label {
+  width: 100%;
+  text-align: center;
+}
+
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: #00295A;
+  border-radius: 3px;
+  border: 1px solid white;
+  text-align: center;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #8AC557;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+#tranche_div {
+  padding: 0;
+}
+
+#portfolio_div {
+  padding: 0;
+}
+
+#tranche_head {
+  background-color: #ddd;
+}
+
+#portfolio_head {
+  background-color: #ddd;
+}
+
+.header-fixed {
+    width: 100%;
+}
+
+.header-fixed > thead,
+.header-fixed > tbody,
+.header-fixed > thead > tr,
+.header-fixed > tbody > tr,
+.header-fixed > thead > tr > th,
+.header-fixed > tbody > tr > td {
+    display: block;
+}
+
+.header-fixed > tbody > tr { 
+    cursor: pointer; 
+    cursor: hand; 
+}
+
+.header-fixed > tbody > tr:after,
+.header-fixed > thead > tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.header_fixed > thead,
+.header-fixed > tbody {
+    overflow-y: auto;
+    height: 150px;
+}
+
+.header-fixed > tbody > tr > td,
+.header-fixed > thead > tr > th {
+    width: 14%;
+    float: left;
+}
+
+.investAmountInput {
+  width: 8em;
+  background-color: #eaeaea;
+  border: solid 1px #7f9db9;
+  font-size: 100%;
+  font-weight: normal;
+  text-align: left;
+  height: 1.4em;
+  line-height: 16px;
+}
+
+#portfolio_items{
+  border-collapse: separate;
+  border-spacing: 25px 0;
+  float: left;
+}
+
+.jumbotron {
+  padding: 1.5em;
+}
+
+#update-submit {
+  text-align: center;
+}
+
+
+#footer {
+  width: 100%;
+  border-top: 10px #00295A solid;
+  position: fixed;
+  bottom: 0px;
+  background-color: white;
+}
+
+#footer_minimize {
+  background-color: #00295A;
+  color: white;
+  width: inherit;
+  top: 0px;
+  float: left;
+  padding-left: 40%;
+  cursor: pointer; 
+  cursor: hand; 
+  border-top: white 2px dotted;
+}
+
+#footer_data {
+ margin-left: .5em;
+ margin-top: 2em;
+}
+
+#purchase_order_form > input {
+  margin-left: .5em;
+}
+
+#purchase_order_submit:hover {
+  background-color: lightgray;
+}
+
+#purchase_order_submit:focus {
+  background-color: black;
+  color: white;
+}
+
+#num_contracts {
+  width: auto;
+  border-radius: 0;
+  margin: 0;
+}
+
+#purchase_order_submit {
+  margin-left: 2em;
+}

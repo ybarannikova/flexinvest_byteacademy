@@ -1,0 +1,49 @@
+#portfolio_table {
+	height: 90%;
+}
+
+.details {
+	height: fit-content;
+	padding: 1em;
+}
+
+#cashflow_table th{
+	background-color: #C0C0C0;
+}
+#cashflow_table {
+	width: 40%;
+	font-size: 0.9em;
+}
+#cashflow_table tr:last-child {
+	font-weight:bold;
+	border-top: 2px solid black;
+}
+#portfolio_items {
+	height:90%;
+}
+#info {
+	width:99%;
+}
+#balance_row {
+	border-top:2px solid black;
+	font-weight: bold;
+}
+#balance_row td {
+	font-weight: bold;
+}
+
+caption#portfolio_caption {
+	width: 84%;
+}
+
+caption {
+	background-color: #989292;
+	text-align: center;
+	font-size: 120%;
+	font-weight: bold;
+	color: black;
+}
+
+#information_table td{
+	font-weight: bold;
+}

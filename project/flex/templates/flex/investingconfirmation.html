@@ -1,0 +1,28 @@
+{% extends "flex/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<script src="{% static 'flex/javascript/investingconfirmation.js' %}"></script>
+<link href="{% static 'flex/css/investingconfirmation.css' %}" rel="stylesheet">
+
+  <div class="container">
+    {% if error %}
+        <p>{{ error }}</p>
+      
+    {% else %}
+    <h3>Trade Confirmation</h3>
+    <p>Print this page for your records.</p>
+    {% for trade in trades %}
+    <p>{{ trade.time }}<br>
+    Trade id: {{ trade.id }}<br>
+    Buyer: {{ trade.buyer.username }}<br>
+    Seller: {{ trade.seller.username }}<br>
+    Price: ${{ trade.contract.face }} </p>
+    {% endfor %}
+    <button id="print_purchase_confirmation" class="btn btn-default btn-sm">Print</button>
+    {% endif %}
+
+    </div>
+{% endblock %}
+
+
