@@ -49,6 +49,8 @@ Further functionality coming soon:
      $ python3 manage.py seed [flex_investor_user] [flex_analyst_user] [scenario1] [scenario2]
      # seed alone will run all options by default
 
+Platform created by Yulia Barannikova, Matt Rosenberg and Demetris Vassiliou
+
 
      
      
